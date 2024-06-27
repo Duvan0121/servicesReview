@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;    font-family:'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+}
+
+.login-box {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+
+.login-box input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block; /* Mostrar en línea para permitir el posicionamiento del botón al lado */
+    vertical-align: middle; /* Alinear verticalmente con el botón */
+    box-sizing: border-box; /* Asegurar que el padding y border no aumenten el ancho */
+}
+
+h2{
+    margin-top: 50px;
+    font-size: 50px;
+}
+
+label{
+    font-size: 25px;
+}
+
+button[type="submit"] {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    color: white;
+    background-color: #333;
+    border: white 3px dashed;
+
+}
+.password-container {
+    margin-top: 20px;
+    position: relative; /* Añadido para controlar la posición del botón */
+    display: inline-block; /* Permitir alinear elementos en línea */
+    width: 100%; /* Ajustar al ancho del contenedor padre */
+}
+
+.toggle-password {
+    cursor: pointer;
+    background-color: #333;;
+    border: none;
+    padding: 8px;
+    margin-top: 17px;
+    margin-right: 3px;
+    width: 30px; /* Ancho cuadrado */
+    height: 30px; /* Altura cuadrada */
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Posicionar de manera absoluta */
+    top: 50%; /* Colocar en el centro vertical */
+    right: 10px; /* Alinear a la derecha */
+    transform: translateY(-50%); 
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-box {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .login-box {
+        width: 90%;
+    }
+
+    .toggle-password {
+        font-size: 12px; /* Reducir tamaño de fuente en pantallas pequeñas */
+        padding: 6px 12px; /* Reducir padding en pantallas pequeñas */
+    }
+}

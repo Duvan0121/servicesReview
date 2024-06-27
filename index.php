@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Top Motos "Eleva tu conducción a la cima."</h1>
+        <h1>Top Motos "La mejor moto según tus necesidades"</h1>
         <nav>
             <ul>
                 <li><a href="#home">Inicio</a></li>

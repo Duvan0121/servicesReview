@@ -1,29 +1,25 @@
-// Función para mostrar una alerta y redirigir después de un tiempo
-function showAlert(message, type, redirectURL) {
-    var alertContainer = document.createElement('div');
-    alertContainer.className = 'alert-container ' + type;
-    alertContainer.innerHTML = `
-        <span class="alert-message">${message}</span>
-        <span class="close-alert" onclick="closeAlert(this)">&times;</span>
-    `;
-    document.body.appendChild(alertContainer);
+document.addEventListener('DOMContentLoaded', function() {
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
 
-    setTimeout(function() {
-        alertContainer.style.opacity = '0';
-        setTimeout(function() {
-            alertContainer.remove();
-            if (redirectURL) {
-                window.location.href = redirectURL;
-            }
-        }, 600); // Tiempo para eliminar la alerta después de desaparecer (600ms)
-    }, 5000); // Tiempo para mostrar la alerta (5000ms)
-}
-
-// Función para cerrar la alerta manualmente
-function closeAlert(element) {
-    var alertContainer = element.closest('.alert-container');
-    alertContainer.style.opacity = '0';
-    setTimeout(function() {
-        alertContainer.remove();
-    }, 600); // Tiempo para eliminar la alerta después de desaparecer (600ms)
-}
+    togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.textContent = type === 'password' ? 'Mostrar' : 'Ocultar';
+        
+        // Mantener el foco en el campo de contraseña después de cambiar el tipo de entrada
+        passwordInput.focus();
+        
+        // Restaurar estilos del campo de contraseña
+        if (type === 'password') {
+            passwordInput.style.border = '1px solid #dddddd';
+            passwordInput.style.borderRadius = '5px';
+            passwordInput.style.padding = '12px';
+            passwordInput.style.fontSize = '16px';
+            passwordInput.style.fontFamily = 'Arial, sans-serif';
+            // Asegurar que cualquier otro estilo específico se mantenga aquí
+        } else {
+            // Aquí puedes ajustar los estilos cuando la contraseña se muestra, si es necesario
+        }
+    });
+});
