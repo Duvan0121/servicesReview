@@ -13,8 +13,8 @@
             <ul>
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#about">Sobre Nosotros</a></li>
-                <li><a href="includes/login.php">Iniciar Sesion </a></li>
-                <li><a href="#register">Registrarse</a></li>
+                  <li><a href="includes/login.php">¿Eres vendedor?</a></li>
+                <li><a href="#contact">¿Quieres que te contactemos?</a></li>
             </ul>
         </nav>
     </header>
@@ -23,7 +23,7 @@
     <section id="home">
     <div class="container">
         <h2>Sección de Inicio</h2>
-        <h3>Si estás con ganas de comprar una motocicleta y no sabes cuál escoger, te ofrecemos los siguientes beneficios:</h3>
+        <h3>Si estás con ganas de comprar una motocicleta y no sabes cuál escoger, te ofrecemos los siguientes servicios:</h3>
         <ul class="benefits-list">
             <li>Imágenes detalladas de las motocicletas</li>
             <li>Altura de la motocicleta</li>
@@ -31,6 +31,7 @@
             <li>Autonomía de combustible</li>
             <li>Tipo de motocicleta</li>
         </ul>
+        <button type="submit">Ver Motocicletas🏍️🛵</button>
     </div>
 </section>
 
@@ -43,21 +44,21 @@
             </p>
         </section>
 
-        <section id="register">
-            <h2>Registrarse</h2>
-            <form action="includes/register.php" method="POST">
-
-                <label for="numId">Número de documento:</label>
-                <input type="text" id="numId" name="numId" required>
-
+        <section id="contact">
+            <h2>Registra tus datos de contacto</h2>
+            <form action="functions/userContact.php" method="POST">
+           
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
+
+                <label for="numId">Número de contacto(Celular):</label>
+                <input type="text" id="cellPhoneNumber" name="cellPhoneNumber" required>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="email">Contraseña:</label>
-                <input type="password" id="pass" name="pass" required>
+                <label for="email">Detalles:</label>
+                <textarea id="details" name="details" rows="5" placeholder="Escribe los detalles de tu consulta"></textarea>
 
 
                 <button type="submit">Registrarse</button>

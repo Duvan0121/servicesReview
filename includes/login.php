@@ -9,13 +9,13 @@
 <body>
     <div class="login-box">
         <h2>Iniciar Sesión</h2>
-        <form action="login.php" method="post">
-            <label for="#">Correo Electronico: </label>
-            <input type="text" name="username" placeholder="email : ejemplo@gmail.com" required>
+        <form action="../functions/validateLogin.php" method="post">
+            <label for="email">Correo Electrónico: </label>
+            <input type="text" name="email" class="email" id="email" placeholder="email: ejemplo@gmail.com" required>
             <br>
             <div class="password-container">
-            <label for="#">Contraseña: </label>
-                <input type="password" name="password" id="password" placeholder="Clave: 11212" required>
+                <label for="password">Contraseña: </label>
+                <input type="password"class="password" name="password" id="password" placeholder="Clave: 11212" required>
                 <button type="button" class="toggle-password" onclick="togglePassword()">👀</button>
             </div>
             <br>

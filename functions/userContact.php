@@ -1,27 +1,23 @@
 <?php
 include '../functions/conection.php';
+require 'functions.php';
 
 $nameTable = "users";
 $redirectURL = "../index.php";
 $mensaje = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $numId = filter_input(INPUT_POST, 'numId', FILTER_SANITIZE_NUMBER_INT);
+    $numId = filter_input(INPUT_POST, 'cellPhoneNumber', FILTER_SANITIZE_NUMBER_INT);
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-    $pass = $_POST['pass']; 
-    $pass_hashed = password_hash($pass, PASSWORD_DEFAULT);
+    $details = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_STRING);
 
-    $sql = "INSERT INTO $nameTable (numId, name, email, pass) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO $nameTable (cellPhoneNumber, userName, userEmail, userDetails) VALUES (?, ?, ?, ?)";
 
     try {
-        $stmt = ejecutarConsulta($sql, [$numId, $name, $email, $pass_hashed]);
-
+        $stmt = ejecutarConsulta($sql, [$numId, $name, $email, $details]);
         if ($stmt->rowCount() > 0) {
-            $mensaje = "Registro exitoso";
-            viewAlert($mensaje);
-            $redirectURL = "../includes/login.php";
-            header("Refresh: 1; URL=".$redirectURL);
+            mostrarMensajeRegistroExitoso();
         } else {
             $mensaje = "Error al registrarse, intente nuevamente";
         }
@@ -31,7 +27,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function viewAlert($message) {
-    echo '<script>alert("' . $message . '");</script>';
-}
+
 ?>
