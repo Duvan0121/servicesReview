@@ -2,7 +2,7 @@
 include 'conection.php';
 require 'functions.php';
 
-$nameTable = "users";
+$nameTable = "sellers";
 $redirectURL = "../index.php";
 $mensaje = ""; 
 
@@ -10,20 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING); // Usar filter_input también para la contraseña
 
-    $sql = "SELECT * FROM $nameTable WHERE userEmail = ?";
+    $sql = "SELECT * FROM $nameTable WHERE emailAdmin = ?";
 
     try {
         $stmt = ejecutarConsulta($sql, [$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['userPassword'])) {
+        if ($user && password_verify($password, $user['passwordAdmin'])) {
             session_start();
-            $_SESSION['user_id'] = $user['userId'];
-            $_SESSION['user_name'] = $user['userName'];
+            $_SESSION['user_id'] = $user['idAdmin'];
+            $_SESSION['user_name'] = $user['nameAdmin'];
             $mensaje = "Inicio de sesión exitoso";
-            viewAlert($mensaje);
-            $redirectURL = "../includes/products.php"; // Redirigir al dashboard o página de inicio del usuario
-            header("Refresh: 1; URL=".$redirectURL);
+            mostrarMensajeRegistroExitoso("Ingreso Exitoso","Da click en continuar","../includes/sellers.php","Continuar");
         } else {
             $mensaje = "Correo electrónico o contraseña incorrectos";
             viewAlert($mensaje);

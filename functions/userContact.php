@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $stmt = ejecutarConsulta($sql, [$numId, $name, $email, $details]);
         if ($stmt->rowCount() > 0) {
-            mostrarMensajeRegistroExitoso();
+            mostrarMensajeRegistroExitoso("Registro Exitoso","Gracias por registrarte. Pronto nos pondremos en contacto contigo.","../index.php","Volver");
         } else {
             $mensaje = "Error al registrarse, intente nuevamente";
         }

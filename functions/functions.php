@@ -3,7 +3,10 @@ function viewAlert($message) {
     echo '<script>alert("' . $message . '");</script>';
 }
 
-function mostrarMensajeRegistroExitoso() {
+function redirigirProductos(){
+    header("Location: ../includes/products.php");
+}
+function mostrarMensajeRegistroExitoso($h1, $message,$redirectURL,$textBtn) {
     echo '
     <!DOCTYPE html>
     <html lang="es">
@@ -52,9 +55,9 @@ function mostrarMensajeRegistroExitoso() {
     </head>
     <body>
         <div class="container">
-            <h1>Registro Exitoso</h1>
-            <p>Gracias por registrarte. Pronto nos pondremos en contacto contigo.</p>
-            <button type="submit" onclick="window.location.href = \'../index.php\';">Volver</button>
+            <h1>' . $h1 . '</h1>
+            <p>' . $message . '</p>
+            <button type="submit" onclick="window.location.href = \'' . $redirectURL . '\';">'.$textBtn.'</button>
         </div>
     </body>
     </html>

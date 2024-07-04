@@ -1,5 +1,6 @@
+/* Estilos generales */
 body {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -27,15 +28,6 @@ header h1 {
     font-size: 35px;
 }
 
-div button {
-    padding: 10px;
-    background-color:#333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-}
 header nav ul {
     list-style: none;
     padding: 0;
@@ -92,17 +84,23 @@ header nav ul li a:hover {
     }
 }
 
-
 main {
     flex: 1;
     padding: 20px;
 }
+
 
 section {
     padding: 20px;
     margin: 20px 0;
     background-color: #fff;
     border-radius: 5px;
+}
+
+
+
+#login {
+    margin: 7% 30% 0% 30%;
 }
 
 .benefits-list {
@@ -115,33 +113,58 @@ section {
     margin-bottom: 10px; 
 }
 
-form {
+/* Estilos específicos para el formulario de login */
+#login-form {
     display: flex;
     flex-direction: column;
 }
 
-form label {
+#login-form label {
     margin-bottom: 5px;
 }
 
-form input, form textarea {
+#login-form input,
+#login-form textarea {
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-form button {
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Alinea los botones al principio y al final del contenedor */
+    margin-top: 10px; /* Espacio entre el formulario y los botones */
+}
+
+button {
     padding: 10px;
-    background-color:#333;
+    background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
+    width: 48%; 
 }
 
-form button:hover {
+
+#login-form button:hover {
+    background-color: #555;
+}
+
+#volver-button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 48%; /* Ancho para que quepan dos botones en línea */
+}
+
+#volver-button:hover {
     background-color: #555;
 }
 
