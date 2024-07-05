@@ -1,0 +1,72 @@
+/* principalAdmin.css */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #009879;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label, select {
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #009879;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #007a66;
+}
+
+.tabla-descripcion {
+    margin-top: auto;
+    display: none; /* Ocultar la descripción inicialmente */
+}
+
+.tabla-descripcion p {
+    font-size: 20px;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}

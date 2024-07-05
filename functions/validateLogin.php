@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['idAdmin'];
             $_SESSION['user_name'] = $user['nameAdmin'];
             $mensaje = "Inicio de sesión exitoso";
-            mostrarMensajeRegistroExitoso("Ingreso Exitoso","Da click en continuar","../includes/sellers.php","Continuar");
+            mostrarMensajeRegistroExitoso("Ingreso Exitoso","Da click en continuar","../includes/principalAdmin.php","Continuar");
         } else {
             $mensaje = "Correo electrónico o contraseña incorrectos";
             viewAlert($mensaje);
