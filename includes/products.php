@@ -19,30 +19,34 @@ session_start();
 </head>
 <body>
 <header>
-        <h1>Catálogo de Productos</h1>
+        <h1>Catálogo de Motocicletas</h1>
     </header>
     <main>
         <div class="product-catalog">
             <?php
             include '../functions/conection.php';
 
-            $stmt = $pdo->prepare("SELECT * FROM productos");
+            $stmt = $pdo->prepare("SELECT * FROM motorcycles");
             $stmt->execute();
-            $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $motorcycles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            foreach ($productos as $producto) {
+            foreach ($motorcycles as $motorcycle) {
                 echo '<div class="product">';
-                echo '<img src="' . $producto['imagen'] . '" alt="' . $producto['nombre'] . '">';
-                echo '<h2>' . $producto['nombre'] . '</h2>';
-                echo '<p>' . $producto['descripcion'] . '</p>';
-                echo '<p class="price">$' . number_format($producto['precio'], 2) . '</p>';
-                echo '<button>Comprar</button>';
+                echo '<h2>' . $motorcycle['nameMotorcycle'] . '</h2>';
+                echo '<img src="' . $motorcycle['pathImage'] . '" alt="' . $motorcycle['nameMotorcycle'] . '">';
+                echo '<p>' . $motorcycle['descriptionMotorcycle'] . '</p>';
+                echo '<p class="price">Precio sujeto a modificaciones: $' . number_format($motorcycle['priceMotorcycle'], 2) . '</p>';
+                echo '<button>Cotizar</button>';
                 echo '</div>';
             }
             ?>
         </div>
     </main>
 
-<a href="logout.php">Cerrar Sesión</a>
+    <button type="button" onclick="window.location.href='../index.php';" id="volver-button">Volver</button>
+    <br>
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> ACA Duvan Felipe Vargas Devia.</p>
+    </footer>
 </body>
 </html>

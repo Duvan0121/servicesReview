@@ -2,7 +2,7 @@
 include '../functions/conection.php';
 require 'functions.php';
 
-$nameTable = "users";
+$nameTable = "contacts";
 $redirectURL = "../index.php";
 $mensaje = ""; 
 

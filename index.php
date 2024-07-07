@@ -56,7 +56,10 @@
 
         <section id="contact">
             <h2>Registra tus datos de contacto</h2>
-            <form action="functions/userContact.php" method="POST" id="login-form">
+            <form action="functions/addAdministrator.php" method="POST" id="login-form">
+
+                <label for="name">Identificación:</label>
+                <input type="number" id="id" name="id" required>
 
                 <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
@@ -72,7 +75,7 @@
                     placeholder="Escribe los detalles de tu consulta"></textarea>
 
                 <button type="submit">Registrar mis datos de contacto!!</button>
-                   
+
             </form>
         </section>
     </main>

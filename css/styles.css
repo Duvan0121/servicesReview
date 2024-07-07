@@ -170,8 +170,14 @@ button {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #333;
     color: #fff;
     margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    height: 7px;
 }

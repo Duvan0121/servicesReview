@@ -2,7 +2,7 @@
 include 'conection.php';
 require 'functions.php';
 
-$nameTable = "sellers";
+$nameTable = "administrators";
 $redirectURL = "../index.php";
 $mensaje = ""; 
 
@@ -10,16 +10,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING); // Usar filter_input también para la contraseña
 
-    $sql = "SELECT * FROM $nameTable WHERE emailAdmin = ?";
+    $sql = "SELECT * FROM $nameTable WHERE email = ?";
 
     try {
         $stmt = ejecutarConsulta($sql, [$email]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user && password_verify($password, $user['passwordAdmin'])) {
+        if ($user && password_verify($password, $user['password'])) {
             session_start();
-            $_SESSION['user_id'] = $user['idAdmin'];
-            $_SESSION['user_name'] = $user['nameAdmin'];
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['name'];
             $mensaje = "Inicio de sesión exitoso";
             mostrarMensajeRegistroExitoso("Ingreso Exitoso","Da click en continuar","../includes/principalAdmin.php","Continuar");
         } else {

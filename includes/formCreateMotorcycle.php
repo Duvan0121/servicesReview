@@ -19,29 +19,29 @@ if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
 <body>
     <div class="container">
 
-        <h1>Registra los datos del administrador</h1>
-        <form action="../functions/addAdministrator.php" method="POST" >
+        <h1>Registra los datos de la motocicleta</h1>
+        <form action="../functions/addAdministrator.php" method="POST">
+            <label for="id">Id de la motocicleta</label>
+            <input type="text" id="id" name="id" required>
+            
+            <label for="name">Nombre de la motocicleta</label>
+            <input type="text" id="name" name="name" required>
 
-            <label for="numId">Nombre del administrador</label>
-            <input type="text" id="nameAdmin" name="nameAdmin" required>
+            <label for="descripcion">Descripcion:</label>
+            <textarea id="description" name="description" rows="5" placeholder="Escribe la descripcion de la motocicleta"></textarea>
 
-            <label for="numId">Identificacion del administrador:</label>
-            <input type="text" id="idAdmin" name="idAdmin" required>
+            <label for="price">Precio:</label>
+            <input type="text" id="price" name="price" required>
 
-            <label for="email">Email del administrador:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="pathImage">Ruta de la imagen:</label>
+            <input type="text" id="pathImage" name="pathImage" required>
 
-            <label for="email">Contraseña:</label>
-            <input type="password" id="pass" name="pass" required>
-
-            <button type="submit" name="control"  value="admin">Registrar administrador</button>
+            <button type="submit" name="control"; value="motorcycle";>Ingresar motocicleta al catalogo</button>
             <button type="button" onclick="window.location.href='../includes/principalAdmin.php';" id="volver-button">Volver</button>
-
         </form>
 
     </div>
-    
-           
+  
     <footer>
         <!--<p>&copy; <?php echo date("Y"); ?> Nuestra Empresa. Todos los derechos reservados.</p>-->
         <p>&copy; <?php echo date("Y"); ?> ACA Duvan Felipe Vargas Devia.</p>

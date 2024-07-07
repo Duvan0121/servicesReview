@@ -1,15 +1,21 @@
 /* principalAdmin.css */
 
+
+
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 6%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -18,7 +24,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #009879;
+    color: #333;
 }
 
 form {
@@ -40,11 +46,18 @@ select {
     font-size: 16px;
 }
 
+input{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
-    background-color: #009879;
+    background-color: #333;
     color: #fff;
     cursor: pointer;
     font-size: 16px;
@@ -52,7 +65,7 @@ button {
 }
 
 button:hover {
-    background-color: #007a66;
+    background-color: #555;
 }
 
 .tabla-descripcion {
@@ -69,4 +82,18 @@ button:hover {
     .container {
         padding: 10px;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    height: 7px;
 }

@@ -1,8 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -21,7 +24,7 @@ table {
 }
 
 thead {
-    background-color: #009879;
+    background-color: #333;
     color: #ffffff;
 }
 
@@ -40,7 +43,7 @@ tbody tr:nth-of-type(even) {
 }
 
 tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #333;
 }
 
 tbody td {
@@ -56,22 +59,18 @@ tbody td button {
 }
 
 tbody td button:nth-child(1) {
-    background-color: #4CAF50;
-    color: white;
-}
-
-tbody td button:nth-child(2) {
-    background-color: #2196F3;
+    background-color: #333;
     color: white;
 }
 
 tbody td button:nth-child(3) {
-    background-color: #f44336;
+    background-color: #2196F3;
     color: white;
 }
 
+
 tbody td button:nth-child(4) {
-    background-color: #FF9800;
+    background-color: red;
     color: white;
 }
 
@@ -104,4 +103,35 @@ tbody td button:nth-child(4) {
         font-weight: bold;
         text-align: left;
     }
+}
+#volver-button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 14%; 
+}
+
+#volver-button:hover {
+    background-color: #555;
+}
+
+h1{
+    text-align: center;
+}
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    height: 7px;
 }

@@ -1,13 +1,18 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
     text-align: center;
 }
 
@@ -21,6 +26,19 @@ main {
     justify-content: space-around;
 }
 
+a{  
+    margin: 0px 0px 15px 15px;
+    background-color: #333;
+    color: #f9f9f9;
+    text-decoration: none;
+    padding: 15px;
+    transition: color 0.3s ease; 
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-size: 20px;
+    width: 8%;
+    text-align: center; 
+}
 .product {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -39,22 +57,23 @@ main {
 }
 
 .product h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 0.5rem 0;
 }
 
 .product p {
+    
     font-size: 1rem;
     margin: 0.5rem 0;
 }
 
 .product .price {
+    border: 1px solid #000000;
     font-weight: bold;
-    color: #4CAF50;
+    color: #000000;
 }
 
 .product button {
-    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 0.5rem 1rem;
@@ -65,10 +84,26 @@ main {
     margin-top: 0.5rem;
     cursor: pointer;
     border-radius: 4px;
+    background-color: #333;
 }
 
 .product button:hover {
-    background-color: #45a049;
+    background-color: #555;
+}
+
+#volver-button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 14%; 
+}
+
+#volver-button:hover {
+    background-color: #555;
 }
 
 @media (max-width: 768px) {
@@ -81,4 +116,18 @@ main {
     .product {
         width: 100%;
     }
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    height: 7px;
 }

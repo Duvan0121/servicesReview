@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost'; 
-$dbname = 'proyectouniversidad'; 
+$dbname = 'top_motos'; 
 $username = 'root'; 
 $password = ''; 
 
@@ -17,9 +17,12 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 
-function ejecutarConsulta($sql, $parametros = []) {
-    global $pdo;
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute($parametros);
-    return $stmt;
+if (!function_exists('ejecutarConsulta')) {
+    function ejecutarConsulta($sql, $parametros = []) {
+        global $pdo;
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($parametros);
+        return $stmt;
+    }
 }
+
